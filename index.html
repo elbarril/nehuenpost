@@ -9,6 +9,10 @@
     <script src="https://app.awesome-table.com/AwesomeTableInclude.js"></script>
     <title>NehuenPost</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         button{
             color: darkgray!important;
         }
@@ -53,7 +57,7 @@
         }
         input[type=range]::-moz-range-track {
             width: 100%;
-            height: 8.4px;
+            height: 4.4px;
             cursor: pointer;
             box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
             background: #3071a9;
@@ -63,7 +67,7 @@
         input[type=range]::-moz-range-thumb {
             box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
             border: 1px solid #000000;
-            height: 36px;
+            height: 24px;
             width: 16px;
             border-radius: 3px;
             background: #ffffff;
@@ -71,7 +75,7 @@
         }
         input[type=range]::-ms-track {
             width: 100%;
-            height: 8.4px;
+            height: 4.4px;
             cursor: pointer;
             background: transparent;
             border-color: transparent;
@@ -93,7 +97,7 @@
         input[type=range]::-ms-thumb {
             box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
             border: 1px solid #000000;
-            height: 36px;
+            height: 24px;
             width: 16px;
             border-radius: 3px;
             background: #ffffff;
@@ -105,6 +109,7 @@
         input[type=range]:focus::-ms-fill-upper {
             background: #367ebd;
         }
+        
         .frame{
             width: 320px;
             display: block;
@@ -115,10 +120,24 @@
             text-align: center;
             width: 100%;
         }
+        .audioplayer{
+            width: 100%;
+            background: cornflowerblue;
+        }
     </style>
 </head>
 <body>
     <div class="container mt-4">
+        <div>
+            <div id="output"></div>
+            <label><code>Frame selector</code></label>
+            <input id="input" type="range" min="0" value="0" max="219" step="1">
+            <label><code>Banda sonora v7</code></label>
+            <audio class="audioplayer" controls>
+                <source src="v7.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+              </audio>
+        </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Pipeline</button>
@@ -135,10 +154,6 @@
             <div class="tab-pane fade" id="request" role="tabpanel" aria-labelledby="request-tab">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScq_X24yYByoeTOSaB3-dyUE7h2sRXheuc1Dv9CK1Tjqypi5Q/viewform?embedded=true" width="640" height="1080" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
             </div>
-        </div>
-        <div>
-            <input id="input" type="range" min="0" value="0" max="219" step="1">
-            <div id="output"></div>
         </div>
 
     </div>
